@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ================= DROPDOWN ================= */
+
+.hamSB-dropdown{
+position:absolute;
+top:52px;
+right:0;
+width:255px;
+padding:14px 0;
+background:rgba(60,60,60,0.45);
+backdrop-filter:blur(28px);
+border-radius:16px;
+box-shadow:0 20px 55px rgba(0,0,0,0.65);
+color:white;
+z-index:999;
+font-family:'Poppins',sans-serif;
+animation:hamDrop .28s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes hamDrop{
+from{opacity:0;transform:translateY(-6px) scale(.96);}
+to{opacity:1;transform:translateY(0) scale(1);}
+}
+
+/* ================= MENU ================= */
+
+.hamSB-menu{
+display:flex;
+flex-direction:column;
+}
+
+.hamSB-item{
+padding:14px 20px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:all .22s ease;
+}
+
+.hamSB-item:hover{
+background:rgba(255,255,255,0.18);
+}
+
+/* ================= RECTANGLE PANEL ================= */
+
+.hamSB-rectPage{
+position:absolute;
+top:0;
+right:270px;
+width:520px;
+height:420px;
+padding:28px;
+border-radius:22px;
+
+background:linear-gradient(
+135deg,
+rgba(40,40,40,0.75),
+rgba(25,25,25,0.85)
+);
+
+backdrop-filter:blur(40px) saturate(180%);
+border:1px solid rgba(255,255,255,0.18);
+
+box-shadow:
+0 30px 90px rgba(0,0,0,0.7),
+inset 0 0 30px rgba(255,255,255,0.05);
+
+color:white;
+overflow:auto;
+animation:mirrorOpen .35s ease;
+}
+
+@keyframes mirrorOpen{
+from{opacity:0;transform:scale(.94) translateY(10px);}
+to{opacity:1;transform:scale(1) translateY(0);}
+}
+
+/* ================= TITLE ================= */
+
+.hamSB-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:20px;
+letter-spacing:.6px;
+}
+
+/* ================= CONTACT GRID ================= */
+
+.hamSB-contactGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
+
+/* ================= CITY CARD ================= */
+
+.cityCard{
+padding:14px;
+border-radius:14px;
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,0.22);
+backdrop-filter:blur(10px);
+transition:.25s;
+}
+
+.cityCard:hover{
+background:rgba(255,255,255,0.18);
+transform:translateY(-3px);
+}
+
+.cityCard h3{
+font-size:16px;
+margin-bottom:6px;
+}
+
+.cityCard p{
+font-size:14px;
+line-height:1.6;
+color:rgba(255,255,255,0.9);
+}
+
+/* ================= HELP TEXT ================= */
+
+.simpleText{
+font-size:15px;
+line-height:1.7;
+}
+
+.simpleText h3{
+margin-top:14px;
+font-size:17px;
+}
+
+/* ================= POLICY ================= */
+
+.policyAccept{
+margin-top:16px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.policyCheck{
+font-size:14px;
+display:flex;
+gap:8px;
+align-items:center;
+}
+
+.acceptBtn{
+padding:10px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.25);
+color:white;
+cursor:pointer;
+transition:.2s;
+}
+
+.acceptBtn:disabled{
+opacity:.4;
+cursor:not-allowed;
+}
+
+.acceptBtn:hover:not(:disabled){
+background:white;
+color:black;
+}
+
+/* ================= WELCOME OVERLAY ================= */
+
+.welcomeOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(18px);
+z-index:2000;
+animation:fade .5s ease;
+}
+
+.welcomeOverlay h1{
+font-size:48px;
+letter-spacing:2px;
+animation:pop .6s ease;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes pop{
+from{transform:scale(.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+/* ================= SCROLLBAR ================= */
+
+.hamSB-rectPage::-webkit-scrollbar{
+width:6px;
+}
+
+.hamSB-rectPage::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.25);
+border-radius:10px;
+}
+
+/* ================= AGENT AI ================= */
+
+.agentAI{
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.agentHeader{
+font-size:18px;
+font-weight:600;
+margin-bottom:10px;
+letter-spacing:.5px;
+}
+
+/* CHAT WINDOW */
+
+.chatWindow{
+flex:1;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+padding-right:6px;
+scroll-behavior:smooth;
+}
+
+/* USER MESSAGE */
+
+.userMsg{
+align-self:flex-end;
+background:rgba(255,255,255,0.25);
+padding:10px 14px;
+border-radius:12px;
+max-width:70%;
+font-size:14px;
+animation:msgFade .25s ease;
+}
+
+/* BOT MESSAGE */
+
+.botMsg{
+align-self:flex-start;
+background:rgba(255,255,255,0.12);
+padding:10px 14px;
+border-radius:12px;
+max-width:70%;
+font-size:14px;
+animation:msgFade .25s ease;
+}
+
+@keyframes msgFade{
+from{opacity:0;transform:translateY(6px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* INPUT AREA */
+
+.chatInputArea{
+display:flex;
+gap:8px;
+margin-top:10px;
+}
+
+.chatInputArea input{
+flex:1;
+padding:10px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.15);
+color:white;
+outline:none;
+font-family:'Poppins',sans-serif;
+}
+
+.chatInputArea input::placeholder{
+color:rgba(255,255,255,0.6);
+}
+
+.chatInputArea button{
+padding:10px 16px;
+border:none;
+border-radius:10px;
+background:white;
+color:black;
+cursor:pointer;
+font-weight:500;
+transition:.2s;
+}
+
+.chatInputArea button:hover{
+transform:scale(1.05);
+}
+
+/* FEEDBACK */
+
+.feedbackBox{
+margin-top:12px;
+text-align:center;
+font-size:14px;
+}
+
+.stars{
+font-size:22px;
+letter-spacing:6px;
+cursor:pointer;
+transition:.25s;
+}
+
+/* ⭐ STAR UPGRADE */
+
+.stars span{
+transition:.25s;
+}
+
+.stars span:hover{
+color:gold;
+transform:scale(1.25);
+text-shadow:0 0 8px rgba(255,215,0,0.9);
+}
+
+/* CHAT SCROLLBAR */
+
+.chatWindow::-webkit-scrollbar{
+width:6px;
+}
+
+.chatWindow::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.25);
+border-radius:10px;
+}

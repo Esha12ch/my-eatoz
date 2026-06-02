@@ -1,0 +1,162 @@
+/* ======================= */
+/* Full-page animated background */
+.payment-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #0a0a0a, #121212);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+/* ======================= */
+/* Back button always visible */
+.pay-back {
+  position: fixed; /* stays visible anywhere */
+  top: 30px;
+  left: 30px;
+  padding: 12px 18px;
+  background: #fff;
+  color: #121212;
+  font-weight: 600;
+  border: 2px solid #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.pay-back:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* ======================= */
+/* Payment card container */
+.payment-card {
+  background: #121212;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Title */
+.title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Timer */
+.timer {
+  margin: 15px 0;
+  font-size: 16px;
+  color: #bbb;
+  font-weight: 500;
+}
+
+/* Amount Box */
+.amount-box {
+  font-size: 22px;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+/* Payment Methods */
+.methods {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.method {
+  padding: 12px 22px;
+  border: 1px solid #555;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+.method:hover {
+  background: #1f1f1f;
+  border-color: #fff;
+  transform: scale(1.05);
+}
+
+.method.active {
+  background: #fff;
+  color: #121212;
+  border-color: #fff;
+  font-weight: 600;
+}
+
+/* Payment Form */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.payment-form input {
+  padding: 14px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #1a1a1a;
+  color: #fff;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.payment-form input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Pay Now Button */
+.pay-now {
+  margin-top: 25px;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  background: #fff;
+  color: #121212;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pay-now:hover {
+  background: #e6e6e6;
+  transform: scale(1.02);
+}
+
+/* ======================= */
+/* Animations */
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(-50px);}
+  100% {opacity: 1; transform: translateY(0);}
+}

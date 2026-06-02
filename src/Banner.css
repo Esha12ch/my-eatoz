@@ -1,0 +1,266 @@
+/* Main Container - Dark Silver Gradient */
+.banner-container {
+  background: linear-gradient(135deg, 
+    #3a3a3a 0%, 
+    #2d2d2d 25%, 
+    #252525 50%, 
+    #2d2d2d 75%, 
+    #3a3a3a 100%);
+  color: #000000;
+  padding: 4rem 2rem;
+  margin: 3rem 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Metallic Shine Animation */
+@keyframes metalShine {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.banner-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0) 100%);
+  animation: metalShine 5s infinite linear;
+  z-index: 1;
+}
+
+/* Content container */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Bold Black Typography */
+.banner-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  color: #000000;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.banner-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #000000, transparent);
+}
+
+.banner-text {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #111111;
+  max-width: 700px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.2);
+}
+
+/* QR Code Section with Metallic Accent */
+.banner-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.scan-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.qr-container {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 
+    0 5px 15px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid #3a3a3a;
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shineBorder 4s infinite;
+}
+
+@keyframes shineBorder {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.qr-code {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  z-index: 2;
+  filter: brightness(1.1) contrast(1.2);
+}
+
+/* Download Buttons with Metallic Finish */
+.download-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+  border: 1px solid #4a4a4a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 
+    0 4px 6px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn i {
+  font-size: 1.4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .banner-heading {
+    font-size: 2.5rem;
+  }
+  
+  .banner-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .banner-heading {
+    font-size: 2.2rem;
+  }
+  
+  .banner-text {
+    font-size: 1.1rem;
+  }
+  
+  .qr-code {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .download-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-container {
+    padding: 2.5rem 1rem;
+  }
+  
+  .banner-heading {
+    font-size: 1.8rem;
+  }
+  
+  .download-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

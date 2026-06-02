@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}/* Add these to your existing App.css if needed */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This ensures proper spacing between sections */
+Header, HeroSection, Services, FoodCategories {
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  Header, HeroSection, Services, FoodCategories {
+    margin-bottom: 1.5rem;
+  }
+}
